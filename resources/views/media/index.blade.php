@@ -28,11 +28,13 @@
               <div class="card-body">
                 <div>
                   <div class="filter-container p-0 row">
-                    <div class="filtr-item col-sm-2" data-category="1" data-sort="white sample">
-                      <a href="https://via.placeholder.com/1200/FF0000.png?text=1" data-toggle="lightbox" data-title="sample 1 - white">
-                        <img src="https://via.placeholder.com/300/FF0000/FFFFFF?text=3" class="img-fluid mb-2" alt="white sample"/>
+                    @foreach($medias as $media)
+                    <div class="filtr-item col-sm-2" data-sort="">
+                      <a href="{{ $media->photo }}" data-toggle="lightbox" data-title="<a href='{{ route('medias.destroy',$media->id) }}' class='btn btn-sm btn-danger' >Delete</a>">
+                        <img src="{{ $media->photo }}" class="img-fluid mb-2" alt="Media Image"/>
                       </a>
                     </div>
+                    @endforeach
                   </div>
                 </div>
 
